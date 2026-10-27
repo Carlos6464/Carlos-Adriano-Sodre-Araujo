@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--
+  Portfólio - Carlos Adriano Sodre Araujo
+  ---------------------------------------------------------------
+  Arquivo : index.html
+  Autor   : Carlos Adriano
+  Data    : 26/10/2026
+
+  Descrição:
+    Página única do portfólio (Software Engineer Backend).
+    Estrutura: cabeçalho > hero > carrossel > sobre > experiência
+    > projeto Amezia > contato > dock flutuante.
+
+  Arquivos relacionados:
+    css/style.css ........ estilos (tema escuro)
+    js/main.js ........... ícones, carrossel, abas, menu, progresso e copiar e-mail
+    img/ ................. foto e capturas de tela do projeto
+    docs/curriculo-carlos-adriano.pdf
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Carlos Adriano Sodre Araujo</title>
+
+  <!-- Fontes (Google Fonts): Manrope (texto), Sora (títulos), JetBrains Mono (código) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+  <!-- Estilos da página -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== CONTÊINER PRINCIPAL (largura máxima centralizada) ===== -->
+<div class="wrap">
+  <!-- ===== CABEÇALHO: marca, menu e barra de progresso ===== -->
+  <header class="top">
+    <div class="top-in">
+      <a class="brand" href="#inicio"><span class="logo">{CA}</span><span>Carlos <b>Adriano</b></span></a>
+      <!-- Botão hambúrguer (visível só no mobile; controlado por js/main.js) -->
+      <button class="menu-btn" type="button" id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span class="i-open" data-i="menu"></span><span class="i-close" data-i="x"></span></button>
+      <!-- Links de navegação (âncoras para as seções) -->
+      <nav class="nav" id="nav" aria-label="Seções">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#projeto">Projeto</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+    <!-- Barra de progresso de leitura (largura atualizada via JS) -->
+    <div class="progress" id="progress" aria-hidden="true"></div>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main id="inicio">
+    <!-- ----- HERO: apresentação e retrato ----- -->
+    <div class="hero">
+      <div>
+        <!-- Texto: selo, título, tecnologias e chamada -->
+        <p class="badge">APIs, integrações e regras de negócio.</p>
+        <h1><span class="sr">Software Engineer Backend</span><span aria-hidden="true">Software Engineer <span class="grad">Backend</span><span class="caret"></span></span></h1>
+        <p class="techline">Python <i>·</i> FastAPI <i>·</i> PHP <i>·</i> PostgreSQL <i>·</i> Redis <i>·</i> Docker <i>·</i> APIs REST <i>·</i> Integrações <i>·</i> Modelagem de dados</p>
+        <p class="lead">Construo APIs e integrações que sustentam apps web e mobile, da modelagem de dados às regras de negócio.</p>
+        <!-- Botões de ação (ver projeto / contato) -->
+        <div class="cta">
+          <a class="btn light" href="#projeto">Ver projeto <span data-i="arrow-ur"></span></a>
+          <a class="btn" href="#contato">Entrar em contato <span data-i="arrow-ur"></span></a>
+        </div>
+      </div>
+      <!-- Retrato -->
+      <div class="photo"><img src="img/foto.jpg" width="400" height="400" alt="Retrato de Carlos Adriano"></div>
+    </div>
+
+    <!-- ----- CARROSSEL DE TECNOLOGIAS (chips preenchidos via JS: #row1 e #row2) ----- -->
+    <div class="marquee" aria-label="Tecnologias e áreas de atuação">
+      <div class="track" id="row1"></div>
+      <div class="track rev" id="row2"></div>
+    </div>
+
+    <!-- ----- SEÇÃO: SOBRE ----- -->
+    <section class="block" id="sobre" aria-labelledby="h-sobre">
+      <div class="split">
+        <div class="head">
+          <p class="kicker">/sobre</p>
+          <h2 id="h-sobre">Como eu penso e trabalho</h2>
+          <p>Sou formado em Computação pela Universidade Federal Fluminense e pós-graduado em desenvolvimento Full Stack pela PUC Minas e pela FIAP.</p>
+        </div>
+        <!-- Quatro blocos: o que faço, como trabalho, onde atuo, o que busco -->
+        <div class="rows">
+          <article class="row"><div class="ico" data-i="target"></div><div><h3>O que eu faço</h3><p>Construo APIs, integrações e fluxos que sustentam aplicações web e mobile, da modelagem de dados às regras de negócio.</p></div></article>
+          <article class="row"><div class="ico" data-i="heart"></div><div><h3>Como eu trabalho</h3><p>Entendo o problema com o time e com o negócio antes de escrever código, priorizando soluções simples e fáceis de evoluir.</p></div></article>
+          <article class="row"><div class="ico" data-i="briefcase"></div><div><h3>Onde eu atuo</h3><p>No backend de produtos digitais de segmentos diferentes: delivery, gestão de oficinas e CRM para o setor de energia solar.</p></div></article>
+          <article class="row"><div class="ico" data-i="search"></div><div><h3>O que eu busco</h3><p>Oportunidades como Software Engineer Backend, contribuindo com desenvolvimento de APIs REST, modelagem de dados e integração de serviços.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----- SEÇÃO: EXPERIÊNCIA E FORMAÇÃO ----- -->
+    <section class="block" id="experiencia" aria-labelledby="h-exp">
+      <div class="head">
+        <p class="kicker">/experiencia</p>
+        <h2 id="h-exp">Onde atuo e o que estudei</h2>
+      </div>
+      <div class="two">
+        <!-- Painel: experiência profissional -->
+        <article class="panel">
+          <p class="plabel">Experiência</p>
+          <p class="period">mai 2023 — hoje</p>
+          <h3>Software Engineer</h3>
+          <p class="org">It Cast</p>
+          <ul class="dots">
+            <li>Backend do aplicativo de delivery, incluindo o provador virtual com IA de terceiros e o fluxo de atualização OTA.</li>
+            <li>API em FastAPI para uma plataforma de gestão de oficinas, com agendamento, assinatura, modelagem de dados e regras de negócio.</li>
+            <li>Parte do backend de um CRM para o setor de energia solar, em equipe.</li>
+          </ul>
+          <ul class="tags"><li class="tag">Python</li><li class="tag">FastAPI</li><li class="tag">PHP</li><li class="tag">PostgreSQL</li><li class="tag">Redis</li><li class="tag">Docker</li></ul>
+        </article>
+        <!-- Painel: formação acadêmica e idiomas -->
+        <article class="panel">
+          <p class="plabel">Formação</p>
+          <ul class="edu">
+            <li><span class="when">mai 2025 — mar 2026</span><b>Pós-Tech em Full Stack Development</b><span class="o">FIAP · Pós-graduação</span></li>
+            <li><span class="when">jul 2023 — dez 2024</span><b>Desenvolvimento Web Full Stack</b><span class="o">PUC Minas · Pós-graduação</span></li>
+            <li><span class="when">mar 2018 — jul 2023</span><b>Graduação em Computação</b><span class="o">Universidade Federal Fluminense</span></li>
+            <li><span class="when">Idiomas</span><b>Inglês</b><span class="o">Uso profissional limitado</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ----- SEÇÃO: PROJETO PESSOAL (Amezia) ----- -->
+    <section class="block" id="projeto" aria-labelledby="h-proj">
+      <div class="head">
+        <p class="kicker">/projeto-pessoal</p>
+        <h2 id="h-proj">Amezia, do zero ao ar</h2>
+      </div>
+      <!-- Apresentação do projeto + capturas de tela -->
+      <div class="case-top">
+        <div>
+          <div class="case-head">
+            <div class="alogo"><img src="img/amezia-logo.png" width="160" height="160" alt="Logo do Amezia"></div>
+            <div>
+              <h3>Amezia</h3>
+              <p class="tl2">Finanças pessoais no piloto automático.</p>
+            </div>
+          </div>
+          <p class="intro-p">Diga ao Amezia "gastei 50 no mercado", por texto, voz ou WhatsApp, e ele categoriza, salva e confirma o gasto. O agente de IA conhece o histórico financeiro real da pessoa e responde com contexto, sem precisar explicar tudo de novo.</p>
+          <ul class="tags"><li class="tag">No ar</li><li class="tag plain">Painel web</li><li class="tag plain">Bot de WhatsApp</li><li class="tag plain">Agente de IA</li></ul>
+          <div class="btns">
+            <a class="btn pri" href="https://amezia.com.br/login" target="_blank" rel="noopener">Abrir o Amezia <span data-i="arrow-ur"></span></a>
+            <a class="btn" href="https://github.com/Carlos6464/amezia-core" target="_blank" rel="noopener">Ver código no GitHub <span data-i="github"></span></a>
+          </div>
+        </div>
+        <!-- Capturas de tela: as abas (#tabs) alternam as imagens via JS -->
+        <div class="shots">
+          <div class="browser">
+            <div class="bar"><i></i><i></i><i></i><span class="url">amezia.com.br</span></div>
+            <div class="frame">
+              <img src="img/amezia-print-1.jpg" alt="Tela do dashboard do Amezia, com teto de gastos, tendência mensal e despesas por categoria" width="1200" height="750">
+              <img src="img/amezia-print-2.jpg" alt="Tela de despesas do Amezia, com busca, filtros por mês e lista de despesas" width="1200" height="750" hidden>
+              <img src="img/amezia-print-3.jpg" alt="Tela de relatórios do Amezia, com análise gerada por IA, ranking de categorias e transações" width="1200" height="750" hidden>
+            </div>
+          </div>
+          <div class="tabs" id="tabs">
+            <button class="tab" type="button" data-n="0" aria-pressed="true">Dashboard</button>
+            <button class="tab" type="button" data-n="1" aria-pressed="false">Despesas</button>
+            <button class="tab" type="button" data-n="2" aria-pressed="false">Relatórios</button>
+          </div>
+          <p class="cap">Telas do projeto (protótipos de interface, com dados de exemplo).</p>
+        </div>
+      </div>
+
+      <!-- Funcionalidades (esquerda) e decisões de engenharia (direita) -->
+      <div class="case-cols">
+        <div>
+          <h4 class="col-h">O que ele faz</h4>
+          <dl class="spec">
+            <div class="r"><dt>Registro em linguagem natural</dt><dd>Fale ou digite o gasto. A IA extrai valor, categoria e data e salva.</dd></div>
+            <div class="r"><dt>Bot de WhatsApp</dt><dd>Registre e consulte gastos sem abrir o app, inclusive por mensagem de voz, que é transcrita e interpretada pela IA.</dd></div>
+            <div class="r"><dt>Agente com memória</dt><dd>RAG sobre embeddings no pgvector: o agente busca o histórico real do usuário antes de responder.</dd></div>
+            <div class="r"><dt>Mais de um provedor de IA</dt><dd>Gemini como principal e Grok como contingência, sem ponto único de falha.</dd></div>
+            <div class="r"><dt>Dashboard e relatórios</dt><dd>Tendência mensal, gastos por categoria, teto do período, exportação em CSV e um resumo em texto gerado por IA.</dd></div>
+            <div class="r"><dt>PWA</dt><dd>Instalável e rápido, sem passar por loja de aplicativos.</dd></div>
+          </dl>
+        </div>
+        <div>
+          <h4 class="col-h">Decisões de engenharia</h4>
+          <div class="eng">
+            <div><h4>Clean Architecture e DDD</h4><p>Um pacote por contexto: auth, categorias, transações, conversas, relatórios, assinaturas, bot de WhatsApp e admin. Os routers só validam e chamam casos de uso, que dependem de interfaces, nunca de HTTP ou SQLAlchemy.</p></div>
+            <div><h4>Tudo assíncrono</h4><p>SQLAlchemy async com asyncpg e um worker ARQ com Redis para as chamadas de IA, o WhatsApp e outras operações pesadas.</p></div>
+            <div><h4>Webhooks rápidos e idempotentes</h4><p>O webhook responde na hora e entrega o trabalho para a fila. O processamento das mensagens é idempotente.</p></div>
+            <div><h4>Privacidade e autenticação</h4><p>Toda consulta filtra por usuário. Telefone, descrições, títulos e resumos ficam criptografados em repouso com Fernet, e o telefone é indexado por HMAC. Login com JWT de curta duração, refresh token em cookie HttpOnly e Google OAuth2.</p></div>
+            <div><h4>Front-end por features</h4><p>Angular 19 com componentes standalone e Signals, cada feature espelhando um contexto do backend, e i18n em runtime com Transloco.</p></div>
+            <div><h4>Schema versionado e testado</h4><p>Alembic com uma cadeia linear de migrações. Os testes do backend cobrem auth, categorias, transações, conversas, relatórios, assinaturas, feedback, admin e o bot de WhatsApp.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stack utilizada no projeto -->
+      <div class="stackrow">
+        <h4 class="col-h">Stack</h4>
+        <ul class="tags" style="margin-top:12px">
+          <li class="tag">Python 3.12</li><li class="tag">FastAPI</li><li class="tag plain">SQLAlchemy async</li><li class="tag plain">Alembic</li><li class="tag">PostgreSQL 16</li><li class="tag plain">pgvector</li><li class="tag">Redis</li><li class="tag plain">ARQ</li><li class="tag plain">WebSocket</li><li class="tag plain">Angular 19</li><li class="tag plain">PrimeNG</li><li class="tag plain">Tailwind</li><li class="tag plain">Transloco</li><li class="tag plain">Gemini</li><li class="tag plain">Grok</li><li class="tag plain">Evolution API</li><li class="tag plain">Resend</li><li class="tag">Docker Compose</li><li class="tag plain">Nginx</li><li class="tag plain">Turborepo</li>
+        </ul>
+      </div>
+      <p class="case-note">O código no GitHub é a edição de vitrine do projeto: uma cópia simplificada, publicada para consulta da arquitetura. Todos os direitos reservados.</p>
+    </section>
+
+    <!-- ----- SEÇÃO: CONTATO ----- -->
+    <section class="block" id="contato" aria-labelledby="h-contato">
+      <div class="contact">
+        <div class="head">
+          <p class="kicker">/contato</p>
+          <h2 id="h-contato">Vamos conversar?</h2>
+          <p>Estou aberto a vagas de Software Engineer Backend e a projetos freelance.</p>
+        </div>
+        <!-- Links de contato; o botão #copy-mail copia o e-mail via JS -->
+        <div class="clinks">
+          <div class="crow">
+            <span class="ico" data-i="mail"></span>
+            <div class="tx"><b>E-mail</b><code id="mail-text">adrianosodre23@gmail.com</code></div>
+            <button class="btn sm" type="button" id="copy-mail">Copiar e-mail</button>
+          </div>
+          <a class="crow" href="https://www.linkedin.com/in/carlosadrianosodrearaujo6464" target="_blank" rel="noopener">
+            <span class="ico" data-i="linkedin"></span>
+            <div class="tx"><b>LinkedIn</b><span class="s">carlosadrianosodrearaujo6464</span></div>
+            <span class="go" data-i="arrow-ur"></span>
+          </a>
+          <a class="crow" href="https://github.com/Carlos6464" target="_blank" rel="noopener">
+            <span class="ico" data-i="github"></span>
+            <div class="tx"><b>GitHub</b><span class="s">Carlos6464</span></div>
+            <span class="go" data-i="arrow-ur"></span>
+          </a>
+        </div>
+      </div>
+      <!-- Rodapé -->
+      <div class="foot">
+        <span>© 2026 Carlos Adriano Sodre Araujo · Santo Antônio de Pádua, RJ</span>
+        <a href="#inicio">Voltar ao topo</a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ===== DOCK FLUTUANTE: atalhos (LinkedIn, WhatsApp, GitHub, currículo) e voltar ao topo ===== -->
+<div class="dock">
+  <a class="hide-sm" href="https://www.linkedin.com/in/carlosadrianosodrearaujo6464" target="_blank" rel="noopener" aria-label="LinkedIn" data-i="linkedin"></a>
+  <a class="hide-sm" href="https://wa.me/5522991043636?text=Ol%C3%A1%20Carlos!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener" aria-label="WhatsApp" data-i="whatsapp"></a>
+  <a class="hide-sm" href="https://github.com/Carlos6464" target="_blank" rel="noopener" aria-label="GitHub" data-i="github"></a>
+  <a class="hide-sm" href="docs/curriculo-carlos-adriano.pdf" target="_blank" rel="noopener" aria-label="Currículo (PDF)" data-i="file"></a>
+  <button class="up" type="button" id="up" aria-label="Voltar ao topo" data-i="arrow-up" hidden></button>
+</div>
+
+<!-- Script da página (ícones, carrossel, abas, menu, progresso, copiar e-mail) -->
+<script src="js/main.js" defer></script>
+
+</body>
+</html>
